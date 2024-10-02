@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drops-Formulário</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/3.4.1/parse.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <h2>Menu Principal</h2>
+
+      <ul class="buttonsMenu">
+        <li><a href="./index.html" class="btnMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <path fill=""
+                d="M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1m-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1" />
+            </svg>
+            Dashboard</a>
+        </li>
+
+        <li>
+          <a class="btnMenu active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
+              <path
+                d="M7.13134 0.294519C7.59535 0.711666 7.63285 1.41941 7.2157 1.88343L3.84103 5.63306C3.6348 5.86273 3.3442 5.99865 3.03486 6.00334C2.72552 6.00802 2.43023 5.89085 2.20994 5.67524L0.330436 3.80043C-0.105458 3.35984 -0.105458 2.64741 0.330436 2.20683C0.766331 1.76625 1.48345 1.76625 1.91934 2.20683L2.95518 3.24267L5.53774 0.374199C5.95489 -0.0898184 6.66263 -0.127315 7.12665 0.289832L7.13134 0.294519ZM7.13134 7.79379C7.59535 8.21093 7.63285 8.91868 7.2157 9.38269L3.84103 13.1323C3.6348 13.362 3.3442 13.4979 3.03486 13.5026C2.72552 13.5073 2.43023 13.3901 2.20994 13.1745L0.330436 11.2997C-0.110145 10.8591 -0.110145 10.1467 0.330436 9.71079C0.771018 9.27489 1.48345 9.27021 1.91934 9.71079L2.95518 10.7466L5.53774 7.87815C5.95489 7.41414 6.66263 7.37664 7.12665 7.79379H7.13134ZM10.5013 3.00363C10.5013 2.17402 11.1716 1.50378 12.0012 1.50378H22.5001C23.3298 1.50378 24 2.17402 24 3.00363C24 3.83324 23.3298 4.50348 22.5001 4.50348H12.0012C11.1716 4.50348 10.5013 3.83324 10.5013 3.00363ZM10.5013 10.5029C10.5013 9.67329 11.1716 9.00304 12.0012 9.00304H22.5001C23.3298 9.00304 24 9.67329 24 10.5029C24 11.3325 23.3298 12.0028 22.5001 12.0028H12.0012C11.1716 12.0028 10.5013 11.3325 10.5013 10.5029ZM7.50161 18.0022C7.50161 17.1726 8.17186 16.5023 9.00147 16.5023H22.5001C23.3298 16.5023 24 17.1726 24 18.0022C24 18.8318 23.3298 19.502 22.5001 19.502H9.00147C8.17186 19.502 7.50161 18.8318 7.50161 18.0022ZM2.25212 15.7524C2.8488 15.7524 3.42104 15.9894 3.84296 16.4113C4.26487 16.8332 4.5019 17.4055 4.5019 18.0022C4.5019 18.5988 4.26487 19.1711 3.84296 19.593C3.42104 20.0149 2.8488 20.2519 2.25212 20.2519C1.65544 20.2519 1.0832 20.0149 0.661289 19.593C0.239373 19.1711 0.00234351 18.5988 0.00234351 18.0022C0.00234351 17.4055 0.239373 16.8332 0.661289 16.4113C1.0832 15.9894 1.65544 15.7524 2.25212 15.7524Z"
+                fill="" />
+            </svg>
+            Novo formulário
+          </a>
+        </li>
+        <li><a href="#avaliacoes" class="btnMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M8.57143 2.57143C8.57143 1.15179 9.72321 0 11.1429 0H12.8571C14.2768 0 15.4286 1.15179 15.4286 2.57143V21.4286C15.4286 22.8482 14.2768 24 12.8571 24H11.1429C9.72321 24 8.57143 22.8482 8.57143 21.4286V2.57143ZM0 12.8571C0 11.4375 1.15179 10.2857 2.57143 10.2857H4.28571C5.70536 10.2857 6.85714 11.4375 6.85714 12.8571V21.4286C6.85714 22.8482 5.70536 24 4.28571 24H2.57143C1.15179 24 0 22.8482 0 21.4286V12.8571ZM19.7143 3.42857H21.4286C22.8482 3.42857 24 4.58036 24 6V21.4286C24 22.8482 22.8482 24 21.4286 24H19.7143C18.2946 24 17.1429 22.8482 17.1429 21.4286V6C17.1429 4.58036 18.2946 3.42857 19.7143 3.42857Z"
+                fill="" />
+            </svg>Avaliações</a>
+        </li>
+        <li><a href="#configuracoes" class="btnMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 24 26" fill="none">
+              <path
+                d="M23.9335 8.28554C24.0926 8.71822 23.9583 9.20063 23.6152 9.50898L21.4617 11.4685C21.5164 11.8813 21.5463 12.304 21.5463 12.7317C21.5463 13.1594 21.5164 13.5821 21.4617 13.9949L23.6152 15.9544C23.9583 16.2627 24.0926 16.7452 23.9335 17.1778C23.7146 17.7697 23.4511 18.3366 23.1477 18.8837L22.9139 19.2865C22.5857 19.8336 22.2177 20.3508 21.8148 20.8382C21.5214 21.1963 21.034 21.3156 20.5964 21.1764L17.8262 20.2961C17.1598 20.8084 16.4238 21.2361 15.638 21.5593L15.0163 24.3991C14.9169 24.8517 14.5687 25.2097 14.1112 25.2843C13.4249 25.3987 12.7186 25.4584 11.9975 25.4584C11.2764 25.4584 10.5702 25.3987 9.88385 25.2843C9.42631 25.2097 9.07818 24.8517 8.97871 24.3991L8.35705 21.5593C7.57126 21.2361 6.83521 20.8084 6.16879 20.2961L3.40363 21.1813C2.96597 21.3206 2.47859 21.1963 2.18516 20.8432C1.78232 20.3558 1.4143 19.8386 1.08606 19.2915L0.852315 18.8887C0.548942 18.3416 0.285357 17.7746 0.0665309 17.1828C-0.0926152 16.7501 0.0416643 16.2677 0.384823 15.9594L2.53827 13.9999C2.48356 13.5821 2.45372 13.1594 2.45372 12.7317C2.45372 12.304 2.48356 11.8813 2.53827 11.4685L0.384823 9.50898C0.0416643 9.20063 -0.0926152 8.71822 0.0665309 8.28554C0.285357 7.69372 0.548942 7.12676 0.852315 6.5797L1.08606 6.17686C1.4143 5.62979 1.78232 5.11257 2.18516 4.62518C2.47859 4.2671 2.96597 4.14774 3.40363 4.287L6.17376 5.16727C6.84019 4.65502 7.57624 4.22732 8.36202 3.90405L8.98368 1.06429C9.08315 0.611718 9.43128 0.253639 9.88883 0.179039C10.5751 0.0596798 11.2814 0 12.0025 0C12.7236 0 13.4298 0.0596798 14.1161 0.174066C14.5737 0.248666 14.9218 0.606744 15.0213 1.05932L15.643 3.89908C16.4287 4.22234 17.1648 4.65005 17.8312 5.1623L20.6013 4.28202C21.039 4.14277 21.5264 4.2671 21.8198 4.62021C22.2227 5.10759 22.5907 5.62482 22.9189 6.17188L23.1527 6.57472C23.456 7.12179 23.7196 7.68875 23.9384 8.28057L23.9335 8.28554ZM12.0025 16.7103C13.0577 16.7103 14.0697 16.2912 14.8158 15.545C15.562 14.7989 15.9811 13.7869 15.9811 12.7317C15.9811 11.6765 15.562 10.6645 14.8158 9.91835C14.0697 9.17221 13.0577 8.75303 12.0025 8.75303C10.9473 8.75303 9.9353 9.17221 9.18915 9.91835C8.44301 10.6645 8.02384 11.6765 8.02384 12.7317C8.02384 13.7869 8.44301 14.7989 9.18915 15.545C9.9353 16.2912 10.9473 16.7103 12.0025 16.7103Z"
+                fill="" />
+            </svg>
+            Configurações</a></li>
+      </ul>
+
+      <div class="logo">
+        <img src="./img/dropslogo.png" width="68" alt="Logo">
+      </div>
+    </nav>
+
+    <div class="header">
+      <h1>Novo Formulário</h1>
+      <div class="btn-img" onclick="document.getElementById('uploadImagem').click();">
+        Enviar Imagem
+      </div>
+      <!-- Novo botão para Analisar -->
+      <button id="analisarBtn" class="btn-analisar" onclick="analisarImagem()" disabled>
+        Analisar
+      </button>
+    </div>
+    <input type="file" id="uploadImagem" style="display: none;" accept="image/*" onchange="habilitarBotaoAnalisar(this)">
+    
+
+      <input type="file" id="uploadImagem" style="display: none;" accept="image/*" onchange="enviarImagem(this)">
+
+      <div class="formPreencher">
+        <div class="formPreencherCont">
+          <h1>É FUNDAMENTAL SABERMOS A SUA OPINIÃO!</h1>
+          <p>Vamos fazer simples e rápidas perguntas, fique à vontade para respondê-las.</p>
+
+          <form id="formularioAvaliacao">
+            <!-- Linha para suite, data e hora -->
+            <div class="linhaPrimary">
+              <div class="lP">
+                <label for="suite">Suíte</label>
+                <input type="text" id="suite" name="suite">
+              </div>
+              <div class="lP">
+                <label for="data">Data</label>
+                <input type="date" id="data" name="data">
+              </div>
+              <div class="lP">
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" name="hora">
+              </div>
+            </div>
+
+            <!-- Avaliação (selects para cada item) -->
+            <h2>Avaliação:</h2>
+            <div class="avaliacao2">
+              <div class="avaliacao-item">
+                <label for="atendimento">Atendimento</label>
+                <select id="atendimento" name="atendimento">
+                  <option value="5">Excelente</option>
+                  <option value="4">Bom</option>
+                  <option value="3">Indiferente</option>
+                  <option value="2">Ruim</option>
+                  <option value="1">Péssimo</option>
+                </select>
+              </div>
+              <div class="avaliacao-item">
+                <label for="limpeza">Limpeza</label>
+                <select id="limpeza" name="limpeza">
+                  <option value="5">Excelente</option>
+                  <option value="4">Bom</option>
+                  <option value="3">Indiferente</option>
+                  <option value="2">Ruim</option>
+                  <option value="1">Péssimo</option>
+                </select>
+              </div>
+              <div class="avaliacao-item">
+                <label for="garagem">Garagem</label>
+                <select id="garagem" name="garagem">
+                  <option value="5">Excelente</option>
+                  <option value="4">Bom</option>
+                  <option value="3">Indiferente</option>
+                  <option value="2">Ruim</option>
+                  <option value="1">Péssimo</option>
+                </select>
+              </div>
+              <div class="avaliacao-item">
+                <label for="ar">Ar</label>
+                <select id="ar" name="ar">
+                  <option value="5">Excelente</option>
+                  <option value="4">Bom</option>
+                  <option value="3">Indiferente</option>
+                  <option value="2">Ruim</option>
+                  <option value="1">Péssimo</option>
+                </select>
+              </div>
+              <div class="avaliacao-item">
+                <label for="tv">TV</label>
+                <select id="tv" name="tv">
+                  <option value="5">Excelente</option>
+                  <option value="4">Bom</option>
+                  <option value="3">Indiferente</option>
+                  <option value="2">Ruim</option>
+                  <option value="1">Péssimo</option>
+                </select>
+              </div>
+              <div class="avaliacao-item">
+                <label for="hidro">Hidro</label>
+                <select id="hidro" name="hidro">
+                  <option value="5">Excelente</option>
+                  <option value="4">Bom</option>
+                  <option value="3">Indiferente</option>
+                  <option value="2">Ruim</option>
+                  <option value="1">Péssimo</option>
+                </select>
+              </div>
+              <div class="avaliacao-item">
+                <label for="refeicoes">Refeições</label>
+                <select id="refeicoes" name="refeicoes">
+                  <option value="5">Excelente</option>
+                  <option value="4">Bom</option>
+                  <option value="3">Indiferente</option>
+                  <option value="2">Ruim</option>
+                  <option value="1">Péssimo</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Perguntas adicionais e informações de contato -->
+            <div class="frequencia">
+              <h2>Com que frequência vai a motéis?</h2>
+              <input type="radio" id="vez1" name="frequencia" value="1ª vez">
+              <label for="vez1">1ª vez</label>
+              <input type="radio" id="mes1" name="frequencia" value="1-2 por mês">
+              <label for="mes1">1-2 por mês</label>
+              <input type="radio" id="semana1" name="frequencia" value="1-5x por semana">
+              <label for="semana1">1-5x por semana</label>
+              <input type="radio" id="ano1" name="frequencia" value="1-3x por ano">
+              <label for="ano1">1-3x por ano</label>
+            </div>
+
+            <!-- Frequencia Este -->
+            <div class="frequenciaEste">
+              <h2>Você frequenta sempre este motel?</h2>
+              <input type="radio" id="sim" name="frequentaSempre" value="Sim">
+              <label for="sim">Sim</label>
+              <input type="radio" id="nao" name="frequentaSempre" value="Não">
+              <label for="nao">Não</label>
+              <input type="radio" id="outros" name="frequentaSempre" value="Outros">
+              <label for="outros">Outros motéis, quais:</label>
+              <textarea name="outros-moteis" class="dn"></textarea>
+            </div>
+
+            <!-- Faixas etárias e tipo de relacionamento -->
+            <div class="faixas">
+              <h2>Suas faixas etárias</h2>
+
+              <div class="parceiro">
+                <!-- Parceiro(a) 1 -->
+                <div class="parceiro1">
+                  <h3>Parceiro(a) 1</h3>
+                  <label><input type="radio" name="parceiro1" value="18-24"> 18 - 24</label>
+                  <label><input type="radio" name="parceiro1" value="25-30"> 25 - 30</label>
+                  <label><input type="radio" name="parceiro1" value="31-40"> 31 - 40</label>
+                  <label><input type="radio" name="parceiro1" value="41-60"> 41 - 60</label>
+                  <label><input type="radio" name="parceiro1" value="61+"> +61</label>
+                </div>
+
+                <!-- Parceiro(a) 2 -->
+                <div class="parceiro2">
+                  <h3>Parceiro(a) 2</h3>
+                  <label><input type="radio" name="parceiro2" value="18-24"> 18 - 24</label>
+                  <label><input type="radio" name="parceiro2" value="25-30"> 25 - 30</label>
+                  <label><input type="radio" name="parceiro2" value="31-40"> 31 - 40</label>
+                  <label><input type="radio" name="parceiro2" value="41-60"> 41 - 60</label>
+                  <label><input type="radio" name="parceiro2" value="61+"> +61</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tipo de relacionamento -->
+            <div class="tipoRelacionamento">
+              <h2>Tipo de relacionamento</h2>
+              <label><input type="radio" name="relacionamento" value="namorados"> Namorados</label>
+              <label><input type="radio" name="relacionamento" value="noivos"> Noivos</label>
+              <label><input type="radio" name="relacionamento" value="casados"> Casados</label>
+              <label><input type="radio" name="relacionamento" value="amantes"> Amantes</label>
+              <label><input type="radio" name="relacionamento" value="solteiros"> Solteiros</label>
+            </div>
+
+            <!-- Escala -->
+            <div class="escala">
+              <h2>Em uma escala de 0 a 10, quanto você recomendaria este motel?</h2>
+              <input type="number" name="recomendacao" min="0" max="10" step="1" id="recomendacao">
+            </div>
+
+
+            <div class="sugestoes">
+              <h2>Sugestões, comentários ou reclamações:</h2>
+              <textarea name="comentarios" id="comentarios"></textarea>
+            </div>
+
+            <div class="contatoFinal">
+              <h2>Caso queira receber uma resposta sobre as sugestões, comentários ou reclamações, nos informe a melhor
+                forma de contato:</h2>
+              <label for="nome">Nome</label>
+              <input type="text" name="nome" id="nome">
+              <label for="telefone">Telefone</label>
+              <input type="tel" name="telefone" id="telefone">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email">
+            </div>
+
+            <button type="submit" class="btn">Enviar Formulário</button>
+          </form>
+        </div>
+      </div>
+
+
+    </main>
+
+
+  </div>
+
+  <script>
+// Função chamada quando uma imagem for selecionada
+function habilitarBotaoAnalisar(input) {
+  const file = input.files[0];
+  if (file) {
+    // Habilita o botão "Analisar" após a imagem ser selecionada
+    document.getElementById('analisarBtn').disabled = false;
+  }
+}
+
+// Função para enviar a imagem para o servidor e preencher o formulário automaticamente
+function analisarImagem() {
+  const input = document.getElementById('uploadImagem');
+  const file = input.files[0];
+  
+  if (file) {
+    const formData = new FormData();
+    formData.append("image", file); // Aqui enviamos a imagem para o back-end
+
+    // Enviar a imagem para o backend
+    fetch('http://localhost:3000/upload', {
+  method: 'POST',
+  body: formData
+})
+.then(response => response.json())
+.then(data => {
+  console.log("Resposta da IA:", data);  // Verificar a resposta da IA
+
+  const message = data.message;
+  const candidates = message && message.candidates;
+
+  if (candidates && candidates.length > 0) {
+    const content = candidates[0].content;
+    if (content && content.parts && content.parts.length > 0) {
+      const jsonText = content.parts[0].text;
+      
+      try {
+        const resultado = JSON.parse(jsonText);  // Convertendo a string JSON em objeto
+        console.log("Resultado obtido:", resultado);  // Exibir o resultado da IA
+
+        if (resultado) {
+          // Função para selecionar a opção correta de um campo select
+          function selecionarOpcao(idCampo, valor) {
+            const campo = document.getElementById(idCampo);
+            if (campo) {
+              for (let i = 0; i < campo.options.length; i++) {
+                if (campo.options[i].text.trim().toLowerCase() === valor.trim().toLowerCase()) {
+                  campo.selectedIndex = i;  // Define a seleção
+                  break;
+                }
+              }
+            }
+          }
+
+          // Função para marcar o campo radio correto
+          function marcarRadio(nameCampo, valor) {
+            const radios = document.getElementsByName(nameCampo);
+            let marcado = false;
+            radios.forEach(radio => {
+              // Comparando ambos os valores em minúsculas para evitar diferenças de capitalização
+              if (radio.value.trim().toLowerCase() === valor.trim().toLowerCase()) {
+                radio.checked = true;  // Marca a opção correta
+                marcado = true;
+              }
+            });
+
+            // Se nenhum radio foi marcado, exibir uma mensagem de erro
+            if (!marcado) {
+              console.log(`Nenhuma opção foi marcada para o campo: ${nameCampo} com valor: ${valor}`);
+            }
+          }
+
+          // Preenchendo campos de select
+          selecionarOpcao('atendimento', resultado.atendimento || '');
+          selecionarOpcao('limpeza', resultado.limpeza || '');
+          selecionarOpcao('garagem', resultado.garagem || '');
+          selecionarOpcao('ar', resultado.ar || '');
+          selecionarOpcao('tv', resultado.tv || '');
+          selecionarOpcao('hidro', resultado.hidro || '');
+          selecionarOpcao('refeicoes', resultado.refeições || '');
+
+          // Preencher campos de recomendação (escala de 0 a 10)
+          document.getElementById('recomendacao').value = resultado.recomendacao || '';
+
+          // Preenchendo campos de radio buttons com base nos dados retornados pela IA
+          marcarRadio('frequencia', resultado.frequencia || '');  // Exemplo: "1-2 por mês"
+          marcarRadio('frequentaSempre', resultado.frequenta_sempre || resultado.frequenta || '');  // Exemplo: "Não"
+
+          // Aqui usamos a mesma faixa etária para parceiro 1 e 2, e removemos espaços extras
+          marcarRadio('parceiro1', resultado.faixa_etaria_1 || resultado.faixa_etaria || '');  // Exemplo: "18-24"
+          marcarRadio('parceiro2', resultado.faixa_etaria_2 || resultado.faixa_etaria || '');  // Exemplo: "18-24"
+
+          // Corrigindo o valor do relacionamento
+          // Corrigindo o valor do relacionamento
+          marcarRadio('relacionamento', resultado.relacionamento.trim().toLowerCase() || '');  // Exemplo: "Solteiros"
+
+        }
+      } catch (error) {
+        console.error("Erro ao analisar JSON da IA:", error);
+      }
+    } else {
+      console.error("Erro: Resposta da IA não contém partes válidas.");
+    }
+  } else {
+    console.error("Erro: Nenhum candidato encontrado na resposta da IA.");
+  }
+})
+.catch(error => {
+  console.error("Erro ao enviar imagem:", error);
+});
+
+
+  }
+}
+
+
+
+  </script>
+</body>
+
+</html>
