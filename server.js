@@ -1,51 +1,29 @@
+// api/upload.js (nova rota no Vercel)
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { GoogleAIFileManager } = require('@google/generative-ai/server');
-const cors = require('cors'); 
 require('dotenv').config();
 
 const app = express();
-const port = 3000;
-
-// Ativar o CORS para todas as rotas
-app.use(cors());  // Adicione esta linha
 
 // Configuração do multer para fazer upload de arquivos
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);
-  },
-});
+const storage = multer.memoryStorage();  // Use memoryStorage para o Vercel
 const upload = multer({ storage });
 
 const apiKey = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 const fileManager = new GoogleAIFileManager(apiKey);
 
-app.use(express.static('public'));
 app.use(express.json());
 
-/**
- * Faz upload do arquivo para a IA do Gemini e retorna o resultado.
- */
-async function uploadToGemini(path, mimeType) {
-  const uploadResult = await fileManager.uploadFile(path, { mimeType, displayName: path });
-  const file = uploadResult.file;
-  console.log(`Arquivo ${file.displayName} enviado como: ${file.name}`);
-  return file;
-}
-
-app.post('/upload', upload.single('image'), async (req, res) => {
-  const filePath = req.file.path;
+app.post('/api/upload', upload.single('image'), async (req, res) => {
   const mimeType = req.file.mimetype;
+  const fileBuffer = req.file.buffer; // Usando buffer para serverless
 
   try {
-    const uploadedFile = await uploadToGemini(filePath, mimeType);
+    const uploadedFile = await fileManager.uploadFile(fileBuffer, { mimeType, displayName: req.file.originalname });
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const chatSession = model.startChat({
@@ -66,8 +44,7 @@ app.post('/upload', upload.single('image'), async (req, res) => {
                 fileUri: uploadedFile.uri,
               },
             },
-            // Instrução mais clara para a IA
-            { text: "Por favor, analise a imagem enviada e identifique as bolinhas preenchidas no formulário. As bolinhas indicam as respostas para perguntas sobre atendimento, limpeza, garagem, ar condicionado, TV, hidromassagem, refeições, frequência de visita, faixa etária, e tipo de relacionamento. Retorne essas respostas em formato JSON." },
+            { text: "Por favor, analise a imagem enviada e identifique as bolinhas preenchidas no formulário." },
           ],
         },
       ],
@@ -81,8 +58,4 @@ app.post('/upload', upload.single('image'), async (req, res) => {
   }
 });
 
-
-
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
-});
+module.exports = app;
